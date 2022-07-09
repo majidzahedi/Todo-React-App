@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.checkbox {
+  background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+}

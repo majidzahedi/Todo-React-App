@@ -1,22 +1,39 @@
 import { useEffect, useState } from "react";
 
-const dummytodos = [
-  { id: "1", title: "Frist Todo", isDone: false },
-  { id: "2", title: "Second Todo", isDone: true },
-  { id: "3", title: "Thrid Todo", isDone: false },
-];
+export const useDarkMode = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    console.log("toggle dark mode triggerd!");
+    setIsDarkMode((prev) => !prev);
+  };
+
+  useEffect(() => {
+    document
+      .querySelector("body")
+      .setAttribute("class", isDarkMode ? "dark" : "");
+  }, [isDarkMode]);
+
+  return { isDarkMode, toggleDarkMode };
+};
 
 const useTodo = () => {
   const [todos, setTodos] = useState(getTodosFromLocalStorage);
-  const [filterBy, setFilterBy] = useState("all");
+  const [filterBy, setFilter] = useState("all");
 
   useEffect(() => {
     saveTodosToLocalStorage(todos);
   }, [todos]);
 
-  const addTodo = (title) => {
+  const addTodo = (e) => {
+    e.preventDefault();
+    const title = e.target[1].value;
     const newTodo = { id: todos.length + 1, title, isDone: false };
+    if (title === "") {
+      return;
+    }
     setTodos([...todos, newTodo]);
+    e.target[1].value = "";
     return newTodo;
   };
 
@@ -27,9 +44,13 @@ const useTodo = () => {
     setTodos(updatedTodo);
   };
 
-  const removeTodo = (id) => {
+  const removeTodo = (id) => () => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
+  };
+
+  const setFilterBy = (status) => () => {
+    setFilter(status);
   };
 
   const filterdTodos = todos.filter((todo) =>
@@ -40,7 +61,16 @@ const useTodo = () => {
       : todo.isDone === true
   );
 
-  return [filterdTodos, { addTodo, removeTodo, toggleTodo }, { setFilterBy }];
+  const clearCompleted = () => {
+    const updatedTodo = todos.filter((todo) => todo.isDone !== true);
+    setTodos(updatedTodo);
+  };
+
+  return [
+    filterdTodos,
+    { addTodo, removeTodo, toggleTodo, clearCompleted },
+    { todos, filterBy, setFilterBy },
+  ];
 };
 
 const saveTodosToLocalStorage = (data) => {

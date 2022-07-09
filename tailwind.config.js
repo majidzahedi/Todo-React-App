@@ -17,16 +17,17 @@ module.exports = {
         // Dark Theme Colors
         veryDarkBlue: "hsl(235, 21%, 11%)",
         veryDarkDesaturatedBlue: "hsl(235, 24%, 19%)",
-        lightGrayishBlue: "hsl(234, 39%, 85%)",
-        lightGrayishBlue1: "hsl(236, 33%, 92%)",
-        darkGrayishBlue: "hsl(234, 11%, 52%)",
-        veryDarkGrayishBlue: "hsl(233, 14%, 35%)",
-        veryDarkGrayishBlue1: "hsl(237, 14%, 26%)",
+        lightGrayishBlue1: "hsl(234, 39%, 85%)",
+        lightGrayishBlue2: "hsl(236, 33%, 92%)",
+        darkGrayishBlue1: "hsl(234, 11%, 52%)",
+        veryDarkGrayishBlue1: "hsl(233, 14%, 35%)",
+        veryDarkGrayishBlue2: "hsl(237, 14%, 26%)",
       },
       backgroundImage: () => ({
         checkBackground:
           "linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)",
-        "desktop-dark": "url('/public/bg-desktop-dark.jpg')",
+        "desktop-dark": "url('/bg-desktop-dark.jpg')",
+        "desktop-light": "url('/bg-desktop-light.jpg')",
       }),
     },
   },
