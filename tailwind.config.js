@@ -7,6 +7,9 @@ module.exports = {
       sans: ["Josefin Sans", "sans-serif"],
     },
     extend: {
+      fontFamily: {
+        vazir: ["Vazirmatn", "sans-serif"],
+      },
       colors: {
         brightBlue: "hsl(220, 98%, 61%)",
         veryLightGray: "hsl(0, 0%, 98%)",

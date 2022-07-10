@@ -17,7 +17,7 @@ const TodoItem = ({ todo, toggleTodo, removeTodo }) => {
         {title}
       </h3>
       <button
-        className="absolute right-8 hidden transition-all duration-200 group-hover:block"
+        className="hidden transition-all duration-200 group-hover:block"
         onClick={removeTodo(id)}
       >
         <img src="/icon-cross.svg" alt="" />

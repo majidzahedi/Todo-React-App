@@ -1,10 +1,60 @@
 import { useEffect, useState } from "react";
 
+const languages = {
+  title: {
+    en: "TODO",
+    fa: "",
+  },
+  placeholder: {
+    en: "Create a new Todo...",
+    fa: "",
+  },
+  footer: {
+    en: "Drag and drop to reorder list",
+    fa: "",
+  },
+  itemsLeft: {
+    en: "items left",
+    fa: "",
+  },
+  clearCompleted: {
+    en: "Clear Completed",
+    fa: "",
+  },
+  all: {
+    en: "All",
+    fa: "",
+  },
+  active: {
+    en: "Active",
+    fa: "",
+  },
+  complete: {
+    en: "Completed",
+    fa: "",
+  },
+  noItems: {
+    en: "You've Got Nothing TODO! 🥳",
+    fa: "",
+  },
+};
+
+export const useRtl = () => {
+  const [isRTL, setIsRtl] = useState(false);
+
+  useEffect(() => {
+    document.querySelector("body").setAttribute("dir", isRTL ? "rtl" : "ltr");
+  }, [isRTL]);
+
+  const toggleRTL = () => setIsRtl(!isRTL);
+
+  return [isRTL, toggleRTL];
+};
+
 export const useDarkMode = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
-    console.log("toggle dark mode triggerd!");
     setIsDarkMode((prev) => !prev);
   };
 

@@ -1,4 +1,6 @@
 import TodoItem from "./TodoItem";
+import language from "../../public/assets/language";
+
 const TodoList = ({
   todos,
   setFilterBy,
@@ -7,6 +9,7 @@ const TodoList = ({
   removeTodo,
   clearCompleted,
   numberOfActiveTodos,
+  isRTL,
 }) => {
   return (
     <div className="flex flex-col rounded-lg bg-white shadow dark:bg-veryDarkDesaturatedBlue">
@@ -21,21 +24,21 @@ const TodoList = ({
         ))
       ) : (
         <h3 className="border-b border-lightGrayishBlue px-8 py-6 text-center text-veryDarkBlue dark:border-darkGrayishBlue1 dark:text-veryLightGrayishBlue">
-          You&apos;ve Got Nothing TODO! 🥳
+          {isRTL ? "کاری برای انجام دادن نیست" : "You've Got Nothing TODO! 🥳"}
         </h3>
       )}
-      <div className="flex items-center  justify-between py-4 px-8">
-        <p className="w-1/3 text-sm text-gray-400">
-          {numberOfActiveTodos} Itmes left
+      <div className="flex items-center  justify-between py-4 px-2 md:px-8">
+        <p className="w-1/3 text-xs text-gray-400 md:text-sm">
+          {numberOfActiveTodos} {isRTL ? "کار باقیمانده" : "Items Left"}
         </p>
-        <div className=" flex w-1/3 items-center  justify-between  ">
+        <div className=" flex w-1/3 items-center  justify-between  text-xs md:text-base">
           <button
             onClick={setFilterBy("all")}
             className={`font-bold text-darkGrayishBlue hover:text-veryDarkBlue dark:hover:text-lightGrayishBlue ${
               filterBy === "all" && "text-blue-500"
             }`}
           >
-            All
+            {isRTL ? "همه" : "All"}
           </button>
           <button
             onClick={setFilterBy("active")}
@@ -43,7 +46,7 @@ const TodoList = ({
               filterBy === "active" && "text-blue-500"
             }`}
           >
-            Active
+            {isRTL ? "فعال" : "Active"}
           </button>
           <button
             onClick={setFilterBy("completed")}
@@ -51,14 +54,14 @@ const TodoList = ({
               filterBy === "completed" && "text-blue-500"
             }`}
           >
-            Completed
+            {isRTL ? "انجام شده ها" : "Completed"}
           </button>
         </div>
         <button
           onClick={clearCompleted}
-          className="w-1/3 text-right  text-sm text-gray-400"
+          className="w-1/3 text-right  text-xs text-gray-400 rtl:text-left md:text-sm"
         >
-          Clear Completed
+          {isRTL ? "پاک کردن انجام شده ها " : "Clear Completed"}
         </button>
       </div>
     </div>
