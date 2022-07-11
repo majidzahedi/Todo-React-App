@@ -11,6 +11,8 @@ module.exports = {
         vazir: ["Vazirmatn", "sans-serif"],
       },
       colors: {
+        checkBackground:
+          "linear-gradient(0.25turn,hsl(192, 100%, 67%),hsl(280, 87%, 65%))",
         brightBlue: "hsl(220, 98%, 61%)",
         veryLightGray: "hsl(0, 0%, 98%)",
         veryLightGrayishBlue: "hsl(236, 33%, 92%)",
@@ -27,8 +29,8 @@ module.exports = {
         veryDarkGrayishBlue2: "hsl(237, 14%, 26%)",
       },
       backgroundImage: () => ({
-        checkBackground:
-          "linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)",
+        checkBackground1:
+          "linear-gradient(0.25turn,hsl(192, 100%, 67%),hsl(280, 87%, 65%))",
         "desktop-dark": "url('/bg-desktop-dark.jpg')",
         "desktop-light": "url('/bg-desktop-light.jpg')",
       }),
