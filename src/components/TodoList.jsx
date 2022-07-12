@@ -59,7 +59,7 @@ const TodoList = ({
         </div>
         <button
           onClick={clearCompleted}
-          className="w-1/3 text-right  text-xs text-gray-400 rtl:text-left md:text-sm"
+          className="w-1/3 text-right  text-xs text-gray-400 hover:text-veryDarkBlue rtl:text-left dark:hover:text-lightGrayishBlue md:text-sm"
         >
           {isRTL ? "پاک کردن انجام شده ها " : "Clear Completed"}
         </button>
