@@ -49,7 +49,7 @@ const useTodo = () => {
     e.preventDefault();
     const title = e.target[1].value;
     const newTodo = {
-      id: Math.floor(Math.random * 1000),
+      id: Math.floor(Math.random() * 1000),
       title,
       isDone: false,
     };
