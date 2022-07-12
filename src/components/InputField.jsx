@@ -1,6 +1,6 @@
 const InputField = ({ addTodo, isRTL }) => {
   return (
-    <div className="w-full rounded-md bg-white py-5 px-8 shadow dark:bg-veryDarkDesaturatedBlue">
+    <div className="w-full rounded-md bg-white py-3 px-8 shadow dark:bg-veryDarkDesaturatedBlue">
       <form className="flex items-center" onSubmit={addTodo}>
         <button type="checkbox" className="group rounded-full bg-inherit p-3" />
         <input

@@ -3,7 +3,7 @@ const Container = ({ children, isRTL, toggleRTL }) => {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   return (
     <div className="min-h-screen border-gray-50 bg-veryLightGray bg-desktop-light bg-top bg-no-repeat px-2 rtl:font-vazir dark:bg-veryDarkBlue dark:bg-desktop-dark md:mx-0">
-      <div className="mx-auto flex max-w-3xl flex-col space-y-8 py-16">
+      <div className="mx-auto flex max-w-xl flex-col space-y-8 py-20">
         <header className="flex items-center justify-between ">
           <h1 className="text-5xl font-bold uppercase tracking-widest text-white rtl:tracking-normal">
             {isRTL ? "کارها" : "TODO"}

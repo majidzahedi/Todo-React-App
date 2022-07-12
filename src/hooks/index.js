@@ -1,43 +1,13 @@
 import { useEffect, useState } from "react";
 
-const languages = {
-  title: {
-    en: "TODO",
-    fa: "",
-  },
-  placeholder: {
-    en: "Create a new Todo...",
-    fa: "",
-  },
-  footer: {
-    en: "Drag and drop to reorder list",
-    fa: "",
-  },
-  itemsLeft: {
-    en: "items left",
-    fa: "",
-  },
-  clearCompleted: {
-    en: "Clear Completed",
-    fa: "",
-  },
-  all: {
-    en: "All",
-    fa: "",
-  },
-  active: {
-    en: "Active",
-    fa: "",
-  },
-  complete: {
-    en: "Completed",
-    fa: "",
-  },
-  noItems: {
-    en: "You've Got Nothing TODO! 🥳",
-    fa: "",
-  },
-};
+const dummyTodos = [
+  { id: 1, title: "complete online JavaScript course", isDone: true },
+  { id: 2, title: "Jog around the park 3x", isDone: false },
+  { id: 3, title: "10 minutes meditation", isDone: false },
+  { id: 4, title: "Read for 1 hour", isDone: false },
+  { id: 5, title: "Pick up groceries", isDone: false },
+  { id: 6, title: "Complete Todo app on Frontend Mentor", isDone: false },
+];
 
 export const useRtl = () => {
   const [isRTL, setIsRtl] = useState(false);
@@ -52,7 +22,7 @@ export const useRtl = () => {
 };
 
 export const useDarkMode = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const toggleDarkMode = () => {
     setIsDarkMode((prev) => !prev);
@@ -78,7 +48,11 @@ const useTodo = () => {
   const addTodo = (e) => {
     e.preventDefault();
     const title = e.target[1].value;
-    const newTodo = { id: todos.length + 1, title, isDone: false };
+    const newTodo = {
+      id: Math.floor(Math.random * 1000),
+      title,
+      isDone: false,
+    };
     if (title === "") {
       return;
     }
@@ -130,7 +104,7 @@ const saveTodosToLocalStorage = (data) => {
 
 const getTodosFromLocalStorage = () => {
   const data = localStorage.getItem("todos");
-  const parsedData = !!data ? JSON.parse(data) : [];
+  const parsedData = !!data ? JSON.parse(data) : dummyTodos;
   return parsedData;
 };
 
