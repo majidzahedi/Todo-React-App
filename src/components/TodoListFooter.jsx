@@ -1,4 +1,4 @@
-import useStore from "../sotre";
+import useStore from "../store";
 const TodoListFooter = () => {
   const { removeCompleted, setFilter, activeTodosCount, status } = useStore();
 

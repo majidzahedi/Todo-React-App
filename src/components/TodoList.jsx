@@ -1,7 +1,7 @@
 import TodoItem from "./TodoItem";
 import TodoListFooter from "./TodoListFooter";
 
-import useStore from "../sotre";
+import useStore from "../store";
 
 const TodoList = () => {
   const { todos, status } = useStore();

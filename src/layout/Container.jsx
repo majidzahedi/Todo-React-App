@@ -1,4 +1,4 @@
-import useStore from "../sotre";
+import useStore from "../store";
 
 const Container = ({ children }) => {
   const { darkMode, toggleDarkMode } = useStore();

@@ -47,7 +47,7 @@ Users should be able to:
 
 ## My process
 
-I started to build the ui as close to challenge standards using react and tailwindcss and then added basic functionality (add, remove, toggle ... of todos) using hooks.
+I started to build the ui as close to challenge standards using react and tailwindcss and then added basic functionality (add, remove, toggle ... of todos) using zustand.
 
 ### Built with
 
@@ -57,10 +57,11 @@ I started to build the ui as close to challenge standards using react and tailwi
 - [React](https://reactjs.org/) - JS library
 - [TailwindCSS](http://tailwindcss.com/) - For styles
 - [React Beutiful DND](https://github.com/atlassian/react-beautiful-dnd) - For Drag&Drop Support
+- [zustand](https://github.com/pmndrs/zustand) - State management
 
 ### Continued development
 
-I will continue to refactor my code and maybe use a state management library also drag and drop feature needs some work. storing and reading dark mode and language state to localstorage is another feature that i will wrok on later.
+I will work on DND later.
 
 ## Author
 
