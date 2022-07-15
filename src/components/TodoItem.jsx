@@ -8,7 +8,7 @@ const TodoItem = ({ todo }) => {
   const handleToggle = (id) => () => toggleTodo(id);
 
   return (
-    <div className="group relative flex items-center border-b border-lightGrayishBlue py-5 px-8 dark:border-veryDarkGrayishBlue">
+    <div className="group relative flex items-center border-b border-lightGrayishBlue py-4 px-8 dark:border-veryDarkGrayishBlue">
       <div className="checkbox-container">
         <input
           type="checkbox"

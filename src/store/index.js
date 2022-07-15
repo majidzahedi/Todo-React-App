@@ -15,7 +15,7 @@ const useStore = create(
     persist(
       (set, get) => ({
         todos: dummyTodos,
-        darkMode: false,
+        darkMode: true,
         status: "all",
         addTodo: (payload) =>
           set((state) =>
